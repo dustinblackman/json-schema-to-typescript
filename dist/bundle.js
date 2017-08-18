@@ -37893,7 +37893,7 @@ function parseSchema(schema, rootSchema, processed) {
     if (schema.patternProperties) {
         var patternProps = lodash_1.map(schema.patternProperties, function (value, key) { return ({
             ast: parse(value, rootSchema, key, true, processed),
-            isRequired: lodash_1.includes(schema.required || [], key),
+            isRequired: true,
             keyName: '[k: string]'
         }); });
         asts = asts.concat(patternProps);

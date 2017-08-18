@@ -262,7 +262,7 @@ function parseSchema(
   if (schema.patternProperties) {
     const patternProps = map(schema.patternProperties, (value, key: string) => ({
       ast: parse(value, rootSchema, key, true, processed),
-      isRequired: includes(schema.required || [], key),
+      isRequired: true,
       keyName: '[k: string]'
     }))
 
